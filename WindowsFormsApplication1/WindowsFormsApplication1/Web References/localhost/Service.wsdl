@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Get_Info">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_InfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_InfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Todo">
+        <s:complexType />
+      </s:element>
+      <s:element name="Obtener_TodoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_TodoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insertar_nuevo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="matricula" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_apellido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="s_apellido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fecha_ingreso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="plantel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="carrera" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="semestre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefono" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insertar_nuevoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Insertar_nuevoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Actualizar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="matricula" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="p_apellido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="s_apellido" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fecha_ingreso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="plantel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="carrera" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="semestre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="direccion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefono" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizarResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cuenta_registros">
+        <s:complexType />
+      </s:element>
+      <s:element name="cuenta_registrosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cuenta_registrosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Borra_Registro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="matricula" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Borra_RegistroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Borra_RegistroResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Get_InfoSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Info" />
+  </wsdl:message>
+  <wsdl:message name="Get_InfoSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_InfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_TodoSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Todo" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_TodoSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_TodoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insertar_nuevoSoapIn">
+    <wsdl:part name="parameters" element="tns:Insertar_nuevo" />
+  </wsdl:message>
+  <wsdl:message name="Insertar_nuevoSoapOut">
+    <wsdl:part name="parameters" element="tns:Insertar_nuevoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarSoapIn">
+    <wsdl:part name="parameters" element="tns:Actualizar" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarResponse" />
+  </wsdl:message>
+  <wsdl:message name="cuenta_registrosSoapIn">
+    <wsdl:part name="parameters" element="tns:cuenta_registros" />
+  </wsdl:message>
+  <wsdl:message name="cuenta_registrosSoapOut">
+    <wsdl:part name="parameters" element="tns:cuenta_registrosResponse" />
+  </wsdl:message>
+  <wsdl:message name="Borra_RegistroSoapIn">
+    <wsdl:part name="parameters" element="tns:Borra_Registro" />
+  </wsdl:message>
+  <wsdl:message name="Borra_RegistroSoapOut">
+    <wsdl:part name="parameters" element="tns:Borra_RegistroResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="Get_Info">
+      <wsdl:input message="tns:Get_InfoSoapIn" />
+      <wsdl:output message="tns:Get_InfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Todo">
+      <wsdl:input message="tns:Obtener_TodoSoapIn" />
+      <wsdl:output message="tns:Obtener_TodoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insertar_nuevo">
+      <wsdl:input message="tns:Insertar_nuevoSoapIn" />
+      <wsdl:output message="tns:Insertar_nuevoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar">
+      <wsdl:input message="tns:ActualizarSoapIn" />
+      <wsdl:output message="tns:ActualizarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cuenta_registros">
+      <wsdl:input message="tns:cuenta_registrosSoapIn" />
+      <wsdl:output message="tns:cuenta_registrosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Borra_Registro">
+      <wsdl:input message="tns:Borra_RegistroSoapIn" />
+      <wsdl:output message="tns:Borra_RegistroSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Get_Info">
+      <soap:operation soapAction="http://tempuri.org/Get_Info" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Todo">
+      <soap:operation soapAction="http://tempuri.org/Obtener_Todo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insertar_nuevo">
+      <soap:operation soapAction="http://tempuri.org/Insertar_nuevo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar">
+      <soap:operation soapAction="http://tempuri.org/Actualizar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cuenta_registros">
+      <soap:operation soapAction="http://tempuri.org/cuenta_registros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Borra_Registro">
+      <soap:operation soapAction="http://tempuri.org/Borra_Registro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Get_Info">
+      <soap12:operation soapAction="http://tempuri.org/Get_Info" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Todo">
+      <soap12:operation soapAction="http://tempuri.org/Obtener_Todo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insertar_nuevo">
+      <soap12:operation soapAction="http://tempuri.org/Insertar_nuevo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Actualizar">
+      <soap12:operation soapAction="http://tempuri.org/Actualizar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cuenta_registros">
+      <soap12:operation soapAction="http://tempuri.org/cuenta_registros" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Borra_Registro">
+      <soap12:operation soapAction="http://tempuri.org/Borra_Registro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://localhost:60875/WebSite1/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://localhost:60875/WebSite1/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
